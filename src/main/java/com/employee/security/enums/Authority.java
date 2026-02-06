@@ -1,0 +1,5 @@
+package com.employee.security.enums;
+
+public enum Authority {
+    CAN_CREATE_EMPLOYEE,CAN_UPDATE_EMPLOYEE,CAN_DELETE_EMPLOYEE,CAN_READ_EMPLOYEE,CAN_MANAGE_USER,CAN_ASSIGN_ROLE
+}

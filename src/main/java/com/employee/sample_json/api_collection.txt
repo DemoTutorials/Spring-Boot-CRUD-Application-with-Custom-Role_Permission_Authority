@@ -1,0 +1,25 @@
+API:- http://localhost:8081/auth/signup
+Method: POST
+Json Request:-
+{
+"userName":"Aniket",
+"password":"Aniket@123"
+}
+Json Response:-
+{
+    "userId": 1,
+    "userName": "Aniket"
+}
+
+API:- http://localhost:8081/auth/signup
+Method: POST
+Json Request:-
+{
+"userName":"Ajinkya",
+"password":"Ajinkya@123"
+}
+Json Response:-
+{
+    "userId": 2,
+    "userName": "Ajinkya"
+}
