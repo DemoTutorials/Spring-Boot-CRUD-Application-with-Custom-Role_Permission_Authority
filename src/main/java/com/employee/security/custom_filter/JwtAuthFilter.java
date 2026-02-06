@@ -18,7 +18,7 @@ import java.io.IOException;
 
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
-    private final static Logger logger= LoggerFactory.getLogger(JwtAuthFilter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(JwtAuthFilter.class);
     private final AuthUtil authUtil;
     private final UserRepository userRepository;
 
@@ -30,10 +30,10 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String requestURI = request.getRequestURI();
-        logger.info("Incoming Request for {}"+requestURI);
+        LOG.info("Incoming Request for {}", requestURI);
 
         String requestHeader = request.getHeader("Authorization");
-        if(requestHeader==null || !requestHeader.startsWith("Bearer")){
+        if(requestHeader==null || !requestHeader.startsWith("Bearer ")){
             filterChain.doFilter(request,response);
             return;
         }

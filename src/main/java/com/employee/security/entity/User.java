@@ -37,19 +37,19 @@ public class User implements UserDetails {
     @CollectionTable(name = "user_role",schema = "employee",joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    Set<Role> roles=new HashSet<>();
+    private Set<Role> roles=new HashSet<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_permission",schema = "employee",joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "permission")
-    Set<Permission> permissions=new HashSet<>();
+    private Set<Permission> permissions=new HashSet<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_authority",schema = "employee",joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "authority")
-    Set<Authority> authority=new HashSet<>();
+    private Set<Authority> authority=new HashSet<>();
 
     @CreatedDate
     private LocalDateTime createdAt;
